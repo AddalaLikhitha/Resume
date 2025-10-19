@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            gap:15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+            margin: auto;
+        }
+        .item{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        .item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sum{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 14px;
+            border-bottom-left-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <div class="item">
+                <img src="house1.jpg" alt="Summer House">
+                <p class="sum">Summer House</p>
+            </div>
+            <div class="item">
+                <img src="house2.jpg" >
+                <p class="sum">Brick House</p>
+            </div>
+            <div class="item">
+                <img src="house3.jpg" >
+                <p class="sum">Renovated</p>
+            </div>
+            <div class="item">
+                <img src="house4.jpg" >
+                <p class="sum">Barn House</p>
+            </div>
+            <div class="item">
+                <img src="house2.jpg" >
+                <p class="sum">Summer House</p>
+            </div>
+            <div class="item">
+                <img src="house1.jpg"class="img">
+                <p class="sum">Brick House</p>
+            </div>
+            <div class="item">
+                <img src="house4.jpg" class="img">
+                <p class="sum">Renovated</p>
+            </div>
+            <div class="item">
+                <img src="house3.jpg" class="img">
+                <p class="sum">Barn House</p>
+            </div>
+        </div>
+    </center>   
+</body>
+</html>
