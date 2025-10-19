@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a, #b{
+            display:none;
+        }
+        .h1,.h2{
+            display:inline-block;
+            width: 200px;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+        }
+        #a:checked +label.h1{
+            background-color: black;
+        }
+        #b:cheched+label.h2{
+            background-color: black;
+        }
+        .eat, .drink{
+            display: none;
+            text-align: left;
+            background: color #f2f2f2;;
+            padding: 15px;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 0 0 10px 10px;
+            margin:auto;
+        }
+        #a:checked~.eat{
+            display: block;
+        }
+        #b:checked~.drink{
+            display:block;
+        }
+        .container{
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="text"id="a">
+        <label for="a"class="h1">Eat</label>
+        
+        <input type="radio" name="text"id="b">
+        <label for="b"class="h1">Drink</label>
+        
+        <div class="eat">
+            <h5>Bread Basket</h5>
+            <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
+            <h5>Honey Almond Granola with Fruits</h5>
+            <p>Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+            <h5>Belgian Waffle</h5>
+            <p>Vanilla flavored batter with malted flour 7.50</p>
+            <h5>Scrambled eggs</h5>
+            <p>Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+            <h5>Blueberry Pancakes</h5>
+        </div>
+        <div class="drink">
+            <h5>Coffee</h5>
+            <p>Regular Coffee 2.50</p>
+            <h5>Chocolate</h5>
+            <p>Chocolate espresso with milk 4.50</p>
+            <h5>Corretto</h5>
+            <p>Whiskey and coffee 5.00</p>
+            <h5>Ice tea</h5>
+            <p>Hot tea,except not hot 3.00</p>
+            <h5>Soda</h5>
+            <p>Coke,Sprite,Fanta, etc. 2.50</p>
+        </div>
+        
+    </container>
+</body>
+</html>
