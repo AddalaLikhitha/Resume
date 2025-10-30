@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: incosolate;
+            scroll-behavior: smooth;
+        }
+        .nav-container{
+            position: fixed;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-around;
+            z-index:+1;
+        }
+        .nav-container>.nav-items{
+            width: 300px;
+            padding: 8px;
+            text-align: center;
+            transition: 0.8 sec ease;
+        }
+        .bg-container{
+            height: 73%;
+            background-image: url("/w3images/coffeehouse.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .bg-container>.text-container{
+            font-size: 7rem;
+            text-align: center;
+            color: white;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-items">Home</div>
+        <div class="nav-items">About</div>
+        <div class="nav-items">Menu</div>
+        <div class="nav-items">contact</div>
+    </div>
+    <div class="bg-container">
+        <div class="text-container">the <br> cafe</div>
+    </div>
+    
+</body>
+</html>
