@@ -1,0 +1,160 @@
+/* body {
+    margin: 0;
+    font-family: Arial;
+    background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") no-repeat center/cover;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    width: 320px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box input,
+select,
+button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+
+.table-box {
+    width: 85%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.delete {
+    background: crimson;
+}
+
+.delete:hover {
+    background: darkred;
+} */
+ body {
+    margin: 0;
+    font-family: Arial;
+    background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d")
+        no-repeat center/cover;
+}
+
+/* ===== LOGIN / FORM CENTER ===== */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===== LOGIN / APPLY FORM BOX ===== */
+.box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    width: 320px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box input,
+.box select,
+.box button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+}
+
+/* ===== PAGE TITLE ===== */
+.title {
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+
+/* ===== TABLE CONTAINER (FIX) ===== */
+/* table-box OR container — BOTH WILL WORK */
+.table-box,
+.container {
+    width: 85%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: white;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* ===== DELETE BUTTON ===== */
+.delete {
+    background: crimson;
+}
+
+.delete:hover {
+    background: darkred;
+}

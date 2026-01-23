@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2 class="title">Admin Dashboard</h2>
+
+    <div class="container">
+        <h3>Add Job</h3>
+
+        <input type="text" id="jobTitle" placeholder="Job Title">
+        <input type="text" id="companyName" placeholder="Company Name">
+        <input type="text" id="jobLocation" placeholder="Location">
+        <input type="text" id="jobSkills" placeholder="Skills">
+
+        <button id="addJobBtn">Add Job</button>
+    </div>
+
+    <br>
+    <div class="container">
+        <h3>All Jobs</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Skills</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="adminJobTable"></tbody>
+        </table>
+
+        <br>
+        <button onclick="logout()">Logout</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
