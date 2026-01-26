@@ -1,58 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Applied Jobs - Admin</title>
-    <link rel="stylesheet" href="style.css">
+<title>Applied Candidates</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Applied Applications</h2>
+<h2 class="title">Applied Candidates</h2>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Job</th>
-            <th>Company</th>
-            <th>User</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody id="adminAppliedTable"></tbody>
+<div class="table-box">
+<button onclick="goBack()">Back</button>
+
+<table>
+<thead>
+<tr>
+<th>Name</th><th>Email</th><th>Mobile</th>
+<th>Qualification</th><th>Skills</th>
+<th>Job</th><th>Resume</th><th>Delete</th>
+</tr>
+</thead>
+<tbody id="adminApplied"></tbody>
 </table>
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Applied Jobs - Admin</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<h2 class="title">Applied Job Applications</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>Job</th>
-            <th>Company</th>
-            <th>User</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody id="adminAppliedTable"></tbody>
-</table>
-
-<br>
-<button onclick="location.href='admin.html'">Back</button>
-
-<script src="script.js"></script>
-</body>
-</html> -->

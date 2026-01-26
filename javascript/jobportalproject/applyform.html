@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Apply Job</title>
-    <link rel="stylesheet" href="style.css">
+<title>Apply Job</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h2>Apply Job</h2>
+<h2 class="title">Apply Job</h2>
 
-    <div class="container">
-        <label>Job Title</label>
-        <input type="text" id="jobTitle" readonly><br><br>
+<div class="center">
+<div class="box">
+<form id="applyForm">
+<input id="fullName" placeholder="Full Name" required>
+<input id="email" placeholder="Email" required>
+<input id="mobile" placeholder="Mobile Number" required>
+<input id="qualification" placeholder="Qualification" required>
+<input id="skills" placeholder="Skills">
+<input type="file" id="resume" accept=".pdf,.doc,.docx" required>
+<button type="submit">Submit Application</button>
+</form>
+</div>
+</div>
 
-        <label>Company Name</label>
-        <input type="text" id="companyName" readonly><br><br>
-
-        <label>Description</label>
-        <textarea id="description"></textarea><br><br>
-
-        <label>Required Skills</label>
-        <input type="text" id="skills"><br><br>
-
-        <label>Your Name</label>
-        <input type="text" id="userName"><br><br>
-
-        <label>Email</label>
-        <input type="email" id="email"><br><br>
-
-        <button id="applyBtn">Submit Application</button>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
-</html>
+</html> 
