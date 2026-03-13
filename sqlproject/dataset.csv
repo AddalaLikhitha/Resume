@@ -1,0 +1,241 @@
+-- =====================================================
+-- E-COMMERCE SALES ANALYSIS PROJECT (SQL)
+-- Author: Devi Siriki
+-- =====================================================
+
+-- Create Database
+CREATE DATABASE ecommerce_analysis;
+
+-- Use the Database
+USE ecommerce_analysis;
+
+-- Show all databases
+SHOW DATABASES;
+
+-- Show tables in the database
+SHOW TABLES;
+
+-- Display dataset before renaming
+SELECT * FROM `ecommerce_sales_data (2)`;
+
+-- Rename table to clean name
+RENAME TABLE `ecommerce_sales_data (2)` TO ecommerce_sales_data;
+
+-- Show table structure
+DESCRIBE ecommerce_sales_data;
+
+-- Display first 10 rows of the dataset
+SELECT * FROM ecommerce_sales_data LIMIT 10;
+
+-- Count total number of records
+SELECT COUNT(*) FROM ecommerce_sales_data;
+
+-- Check rows where sales value is NULL
+SELECT * FROM ecommerce_sales_data WHERE sales IS NULL;
+
+-- =====================================================
+-- BASIC SALES ANALYSIS
+-- =====================================================
+
+-- Calculate total sales
+SELECT SUM(sales) FROM ecommerce_sales_data;
+
+-- Calculate total quantity sold
+SELECT SUM(quantity) FROM ecommerce_sales_data;
+
+-- Find average sales per order
+SELECT AVG(sales) AS average_sales_per_order 
+FROM ecommerce_sales_data;
+
+-- =====================================================
+-- CATEGORY ANALYSIS
+-- =====================================================
+
+-- Total sales for each category
+SELECT category, SUM(sales) AS category_sales
+FROM ecommerce_sales_data
+GROUP BY category;
+
+-- Categories ordered by highest sales
+SELECT category, SUM(sales) AS total_sales
+FROM ecommerce_sales_data
+GROUP BY category
+ORDER BY total_sales DESC;
+
+-- Total quantity sold per category
+SELECT category, SUM(quantity)
+FROM ecommerce_sales_data
+GROUP BY category;
+
+-- =====================================================
+-- REGION ANALYSIS
+-- =====================================================
+
+-- Total sales by region
+SELECT Region, SUM(sales)
+FROM ecommerce_sales_data
+GROUP BY Region;
+
+-- Top 5 regions with highest sales
+SELECT Region, SUM(sales) AS five_highest_sales
+FROM ecommerce_sales_data
+GROUP BY Region
+ORDER BY five_highest_sales DESC
+LIMIT 5;
+
+-- Average sales per region
+SELECT Region, AVG(sales) AS avg_sales_foreach_region
+FROM ecommerce_sales_data
+GROUP BY Region;
+
+-- Region with lowest profit
+SELECT Region, SUM(profit) AS Total_profit
+FROM ecommerce_sales_data
+GROUP BY Region
+ORDER BY Total_profit ASC
+LIMIT 1;
+
+-- =====================================================
+-- DATA CLEANING
+-- =====================================================
+
+-- Rename column Product Name to product_name
+ALTER TABLE ecommerce_sales_data
+RENAME COLUMN `Product Name` TO product_name;
+
+-- =====================================================
+-- PRODUCT ANALYSIS
+-- =====================================================
+
+-- Top 5 products with highest sales
+SELECT product_name, SUM(sales) AS total_sales
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY total_sales DESC
+LIMIT 5;
+
+-- Highest sale transaction per product
+SELECT product_name, MAX(sales) AS Highest_sales
+FROM ecommerce_sales_data
+GROUP BY product_name
+LIMIT 10;
+
+-- Average quantity sold per product
+SELECT product_name, AVG(quantity) AS avg_quantity_sold_per_product
+FROM ecommerce_sales_data
+GROUP BY product_name;
+
+-- Most profitable products
+SELECT product_name, MAX(profit) AS profitable_products
+FROM ecommerce_sales_data
+GROUP BY product_name
+LIMIT 5;
+
+-- Highest single sale transaction per product
+SELECT product_name, MAX(sales) AS Highest_single_sale_transaction
+FROM ecommerce_sales_data
+GROUP BY product_name
+LIMIT 5;
+
+-- Product sales greater than average sales
+SELECT product_name,
+       SUM(sales) AS sum_of_sales,
+       AVG(sales) AS avg_sales
+FROM ecommerce_sales_data
+GROUP BY product_name
+HAVING SUM(sales) > AVG(sales);
+
+-- =====================================================
+-- PROFIT ANALYSIS
+-- =====================================================
+
+-- Total profit for each category
+SELECT category, SUM(profit) AS Each_category_total_profit
+FROM ecommerce_sales_data
+GROUP BY category;
+
+-- Category with highest profit
+SELECT category, MAX(profit) AS Highest_revenue
+FROM ecommerce_sales_data
+GROUP BY category
+LIMIT 3;
+
+-- Product with highest profit
+SELECT product_name, SUM(profit) AS Highest_profit
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY Highest_profit DESC
+LIMIT 1;
+
+-- Average profit for each product
+SELECT product_name, AVG(profit) AS Average_profit_product
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY Average_profit_product DESC;
+
+-- Products with highest profit
+SELECT product_name, SUM(profit) AS Total_profit
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY Total_profit DESC
+LIMIT 5;
+
+-- =====================================================
+-- SALES & QUANTITY ANALYSIS
+-- =====================================================
+
+-- Total quantity and sales for each product
+SELECT product_name,
+       SUM(quantity) AS total_quantity,
+       SUM(sales) AS Total_sales
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY Total_sales DESC;
+
+-- Product with highest quantity sold
+SELECT product_name, SUM(quantity) AS total_quantity
+FROM ecommerce_sales_data
+GROUP BY product_name
+ORDER BY total_quantity DESC
+LIMIT 1;
+
+-- Products with sales greater than 5000
+SELECT product_name, SUM(sales) AS Total_sales
+FROM ecommerce_sales_data
+GROUP BY product_name
+HAVING SUM(sales) > 5000;
+
+-- =====================================================
+-- CATEGORY & REGION ANALYSIS
+-- =====================================================
+
+-- Category and region total sales and profit
+SELECT category,
+       Region,
+       SUM(sales) AS Total_sales,
+       SUM(profit) AS Total_profit
+FROM ecommerce_sales_data
+GROUP BY category, Region;
+
+-- Category and region sales comparison
+SELECT category,
+       Region,
+       SUM(sales) AS Total_sales
+FROM ecommerce_sales_data
+GROUP BY category, Region
+ORDER BY Total_sales DESC;
+
+-- Average quantity sold in each category
+SELECT category,
+       AVG(quantity) AS Average_quantity
+FROM ecommerce_sales_data
+GROUP BY category
+ORDER BY Average_quantity DESC;
+
+-- Top 3 categories with highest sales
+SELECT category,
+       SUM(sales) AS Total_sales
+FROM ecommerce_sales_data
+GROUP BY category
+ORDER BY Total_sales DESC
+LIMIT 3;
